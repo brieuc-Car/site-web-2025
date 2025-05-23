@@ -1,0 +1,227 @@
+/* Applique des styles de base au corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Définit la police */
+    line-height: 1.6; /* Définit la hauteur de ligne */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les bordures internes */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    background-color: #d5d7c6; /* Définit la couleur de fond */
+}
+
+/* Applique des styles à l'en-tête */
+header {
+    background: #4b5320; /* Vert olive */
+    color: #fff; /* Couleur du texte en blanc */
+    padding: 1em 0; /* Espacement interne en haut et en bas */
+    animation: fadeInDown 1s ease-out; /* Animation de fondu vers le bas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée */
+}
+
+/* Style pour le titre de l'en-tête */
+header h1 {
+    text-align: center; /* Centre le texte */
+    font-size: 2.5em; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    margin: 0; /* Supprime les marges par défaut */
+    padding-bottom: 0.5em; /* Espacement en bas */
+}
+
+/* Applique des styles au menu de navigation */
+nav {
+    background: linear-gradient(to right, #4b5320, #6b8e23); /* Dégradé vert olive */
+    border-radius: 50px; /* Coins arrondis */
+    overflow: hidden; /* Cache le débordement */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    margin: 0 auto; /* Centre le menu horizontalement */
+    padding: 0.5em; /* Espacement interne */
+    width: 80%; /* Largeur du menu */
+    max-width: 900px; /* Largeur maximale */
+}
+
+/* Supprime les puces de la liste et ajuste l'affichage */
+nav ul {
+    list-style: none; /* Supprime les puces */
+    display: flex; /* Affichage en flexbox */
+    justify-content: space-around; /* Espace entre les éléments */
+    padding: 0; /* Supprime le padding */
+    margin: 0; /* Supprime les marges */
+}
+
+/* Ajuste la marge des éléments de liste */
+nav ul li {
+    margin: 0; /* Supprime les marges */
+}
+
+/* Applique des styles aux liens de navigation */
+nav ul li a {
+    color: #fff; /* Couleur du texte en blanc */
+    text-decoration: none; /* Supprime la décoration du texte */
+    padding: 0.5em 1em; /* Espacement interne */
+    transition: color 0.3s, background-color 0.3s; /* Transition des couleurs */
+    border-radius: 25px; /* Coins arrondis */
+}
+
+/* Change la couleur et l'arrière-plan au survol */
+nav ul li a:hover {
+    color: #4b5320; /* Vert olive */
+    background: #fff; /* Arrière-plan blanc */
+}
+
+/* Applique des styles aux sections */
+section {
+    padding: 2em; /* Espacement interne */
+    margin: 1em 0; /* Marges en haut et en bas */
+    opacity: 0; /* Opacité initiale */
+    transform: translateY(20px); /* Translation initiale */
+    animation: slideUp 1s forwards; /* Animation de glissement vers le haut */
+}
+
+/* Animation de zoom pour les titres de section */
+section h2 {
+    animation: zoomIn 0.5s forwards; /* Animation de zoom */
+}
+
+/* Animation de fondu pour les paragraphes */
+section p {
+    animation: fadeIn 1s forwards; /* Animation de fondu */
+}
+
+/* Animation de zoom pour les images */
+section img {
+    max-width: 100%; /* Largeur maximale */
+    display: block; /* Affichage en bloc */
+    margin: 0 auto; /* Centre l'image */
+    opacity: 0; /* Opacité initiale */
+    transform: scale(0.9); /* Échelle initiale */
+    animation: zoomIn 1s forwards; /* Animation de zoom */
+}
+
+/* Animation de balancement pour les formulaires */
+form {
+    animation: swingIn 1s forwards; /* Animation de balancement */
+}
+
+/* Applique des styles aux boutons de soumission */
+input[type="submit"] {
+    background: #4b5320; /* Vert olive */
+    color: #fff; /* Texte en blanc */
+    border: none; /* Supprime les bordures */
+    padding: 0.5em 1em; /* Espacement interne */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s; /* Transition de la couleur de fond */
+    border-radius: 25px; /* Coins arrondis */
+}
+
+/* Change la couleur de fond au survol */
+input[type="submit"]:hover {
+    background: #6b8e23; /* Vert olive foncé */
+}
+
+/* Applique des styles au pied de page */
+footer {
+    text-align: center; /* Centre le texte */
+    padding: 1em 0; /* Espacement interne */
+    background: #4b5320; /* Vert olive */
+    color: #fff; /* Texte en blanc */
+    width: 100%; /* Largeur maximale */
+    bottom: 0; /* Position en bas */
+    animation: fadeInUp 1s ease-out; /* Animation de fondu vers le haut */
+}
+.back-to-top {
+    position: fixed; /* Positionne le bouton de manière fixe à l'écran */
+    bottom: 20px; /* À 20 pixels du bas de l'écran */
+    right: 20px; /* À 20 pixels du bord droit de l'écran */
+    display: none; /* Par défaut, le bouton n'est pas affiché */
+    background-color: #414141; /* Couleur de fond du bouton */
+    border: none; /* Pas de bordure */
+    padding: 15px 20px; /* Espacement interne du bouton (15px en haut et en bas, 20px à gauche et à droite) */
+    font-size: 1px; /* Taille de la police du texte */
+    border-radius: 5px; /* Coins arrondis du bouton */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre autour du bouton pour donner un effet de profondeur */
+    cursor: pointer; /* Curseur en forme de main quand on passe sur le bouton */
+    transition: background-color 0.3s, transform 0.3s; /* Transition douce pour les changements de couleur de fond et de transformation */
+}
+.back-to-top:hover {
+    background-color: #333; /* Change la couleur de fond quand la souris est sur le bouton */
+    transform: translateY(-2px); /* Déplace légèrement le bouton vers le haut pour un effet interactif */
+}
+.arrow-up {
+    display: inline-block; /* Affiche l'élément en ligne, mais comme un bloc */
+    margin-right: 5px; /* Marge de 5 pixels à droite */
+    border: solid white; /* Bordure blanche */
+    border-width: 0 4px 4px 0; /* Bordure avec des largeurs différentes pour créer une flèche */
+    padding: 5px; /* Espacement interne pour la flèche */
+    transform: rotate(-135deg); /* Rotation de l'élément pour former une flèche pointant vers le haut */
+    -webkit-transform: rotate(-135deg); /* Version pour les navigateurs basés sur Webkit */
+}
+.larger-text {
+    font-size: 1.2em; /* Taille de police plus grande */
+}
+.center-text {
+    text-align: center;
+}
+.large-image {
+    width: 500px; /* Modifier la largeur de l'image */
+    height: auto; /* Maintenir le rapport d'aspect */
+}
+.large-image2 {
+    width: 400px; /* Modifier la largeur de l'image */
+    height: auto; /* Maintenir le rapport d'aspect */
+}
+.back-button {
+    background-color: #6b8e23; /* Vert */
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.back-button:hover {
+    background-color: #5a771e; /* Vert plus foncé */
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.back-button:active {
+    background-color: #4c641a; /* Vert encore plus foncé */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+.larger-text {
+    font-size: 1.2em; /* Taille de police plus grande */
+}
+/* Définition des animations */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Opacité initiale */
+    to { opacity: 1; } /* Opacité finale */
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); } /* Opacité et translation initiales */
+    to { opacity: 1; transform: translateY(0); } /* Opacité et translation finales */
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); } /* Opacité et translation initiales */
+    to { opacity: 1; transform: translateY(0); } /* Opacité et translation finales */
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); } /* Opacité et translation initiales */
+    to { opacity: 1; transform: translateY(0); } /* Opacité et translation finales */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; } /* Échelle et opacité initiales */
+    to { transform: scale(1); opacity: 1; } /* Échelle et opacité finales */
+}

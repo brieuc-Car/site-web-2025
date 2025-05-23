@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bataille de Stalingrad</title>
+    <link rel="icon" href="https://www.pngitem.com/pimgs/m/119-1197741_airplane-bomber-fighter-aircraft-clip-art-ww2-bomber.png" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        .back-button {
+            background-color: #6b8e23; /* Vert */
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            background-color: #5a771e; /* Vert plus foncé */
+            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .back-button:active {
+            background-color: #4c641a; /* Vert encore plus foncé */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+        .larger-text {
+            font-size: 1.2em; /* Taille de police plus grande */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bataille des Ardennes</h1>
+    </header>
+    <section class="button-container">
+        <button class="back-button" onclick="history.back()">❮ Retour</button>
+    </section>
+    <section class="larger-text">
+        <h2>Résumé de la Bataille des Ardennes</h2>
+        <p>La Bataille des Ardennes, également connue sous le nom d'Offensive des Ardennes, a été l'une des dernières grandes offensives allemandes sur le front occidental pendant la Seconde Guerre mondiale, se déroulant du 16 décembre 1944 au 25 janvier 1945.</p>
+        <ul>
+            <li><strong>Contexte</strong> : L'Allemagne nazie cherchait à diviser les forces alliées et à capturer le port stratégique d'Anvers, afin de retourner le cours de la guerre en leur faveur.</li>
+            <li><strong>Déroulement</strong> :
+                <ul>
+                    <li>16 décembre 1944 : Début de l'offensive allemande avec une attaque surprise à travers les Ardennes, prenant les Alliés au dépourvu.</li>
+                    <li>Décembre 1944 : Avancée allemande initiale, créant une "bosse" dans les lignes alliées.</li>
+                    <li>Janvier 1945 : Contre-offensive alliée, avec des renforts et une meilleure coordination, arrêtant et repoussant les forces allemandes.</li>
+                    <li>25 janvier 1945 : Fin de la bataille, avec les forces allemandes en retraite et l'offensive alliée reprenant.</li>
+                </ul>
+            </li>
+            <li><strong>Issue</strong> : Victoire des Alliés, infligeant de lourdes pertes aux forces allemandes et contribuant à l'effondrement final de l'Allemagne nazie.</li>
+            <li><strong>Importance</strong> : La Bataille des Ardennes a marqué la dernière grande offensive allemande sur le front occidental et a affaibli de manière significative les capacités militaires de l'Allemagne, ouvrant la voie à l'invasion de l'Allemagne par les Alliés.</li>
+        </ul>
+        <img src="batailledesArdenne.PNG" alt="Bataille des Ardennes" class="large-image">
+    </section>
+    <footer>
+        <p>&copy; 2024 Brieuc Carbonnelle, Gabriel Landuydt</p>
+    </footer>
+</body>
+</html>

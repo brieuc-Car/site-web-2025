@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconde Guerre Mondiale</title>
+    <link rel="icon" href="https://www.pngitem.com/pimgs/m/119-1197741_airplane-bomber-fighter-aircraft-clip-art-ww2-bomber.png" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        .back-button {
+            background-color: #6b8e23; /* Vert */
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            background-color: #5a771e; /* Vert plus foncé */
+            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .back-button:active {
+            background-color: #4c641a; /* Vert encore plus foncé */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+        .larger-text {
+            font-size: 1.2em; /* Taille de police plus grande */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bataille de l'Atlantique</h1>
+    </header>
+    <section class="button-container">
+        <!-- Bouton de retour stylisé -->
+        <button class="back-button" onclick="history.back()">❮ Retour</button>
+    </section>
+    <section class="larger-text">
+        <h2> Bataille de l'Atlantique</h2>
+        <p>La bataille de l'Atlantique a été une campagne cruciale de la Seconde Guerre mondiale, qui s'est déroulée de septembre 1939 à mai 1945.</p>
+        <ul>
+            <li><strong>Objectif</strong> : Contrôler les routes maritimes de l'Atlantique Nord pour le ravitaillement des Alliés en Europe.</li>
+            <li><strong>Protagonistes</strong> : Les Alliés (Grande-Bretagne, Canada, États-Unis) et l'Allemagne nazie (U-boot).</li>
+            <li><strong>Stratégies</strong> :
+                <ul>
+                    <li>Allemands : Utilisation de sous-marins U-boot pour couler les navires alliés.</li>
+                    <li>Alliés : Formation de convois escortés, utilisation du radar et du sonar pour détecter les sous-marins.</li>
+                </ul>
+            </li>
+            <li><strong>Déroulement</strong> :
+                <ul>
+                    <li>1939-1941 : Les U-boot infligent de lourdes pertes aux Alliés.</li>
+                    <li>1943 : Année décisive avec l'amélioration des technologies et des tactiques alliées. Les pertes allemandes augmentent.</li>
+                    <li>1944-1945 : Supériorité alliée confirmée et diminution des pertes alliées. La bataille se termine avec la défaite de l'Allemagne.</li>
+                </ul>
+            </li>
+            <li><strong>Importance</strong> : La bataille a été essentielle pour maintenir la capacité des Alliés à poursuivre la guerre en Europe et a entraîné des avancées technologiques significatives.</li>
+        </ul>
+        <img src="atlim.PNG" alt="Bataille de l'atlentique" class="large-image">
+    </section>
+    <footer>
+        <p>&copy; 2024 Brieuc Carbonnelle, Gabriel landuydt</p>
+    </footer>
+</body>
+</html>

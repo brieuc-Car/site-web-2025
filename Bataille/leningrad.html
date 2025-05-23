@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconde Guerre Mondiale</title>
+    <link rel="icon" href="https://www.pngitem.com/pimgs/m/119-1197741_airplane-bomber-fighter-aircraft-clip-art-ww2-bomber.png" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        .back-button {
+            background-color: #6b8e23; /* Vert */
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            background-color: #5a771e; /* Vert plus foncé */
+            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .back-button:active {
+            background-color: #4c641a; /* Vert encore plus foncé */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+        .larger-text {
+            font-size: 1.2em; /* Taille de police plus grande */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bataille de Léningrad</h1>
+    </header>
+    <section class="button-container">
+        <!-- Bouton de retour stylisé -->
+        <button class="back-button" onclick="history.back()">❮ Retour</button>
+    </section>
+    <section class="larger-text">
+        <h2>Résumé de la Bataille de Léningrad</h2>
+        <p>La Bataille de Léningrad, également connue sous le nom de Siège de Léningrad, a été l'un des sièges les plus longs et les plus brutaux de l'histoire, durant du 8 septembre 1941 au 27 janvier 1944.</p>
+        <ul>
+            <li><strong>Contexte</strong> : Après l'invasion de l'Union soviétique par l'Allemagne nazie en 1941, Léningrad (aujourd'hui Saint-Pétersbourg) est assiégée par les forces allemandes et finlandaises.</li>
+            <li><strong>Déroulement</strong> :
+                <ul>
+                    <li>Septembre 1941 : Début du siège avec des bombardements massifs et une tentative de blocus complet.</li>
+                    <li>1941-1942 : Hiver terrible, entraînant une famine massive parmi la population civiles.</li>
+                    <li>1942-1943 : Continuation des combats et des bombardements, avec des tentatives de percées soviétiques pour briser le siège.</li>
+                    <li>Janvier 1944 : Fin du siège avec la levée du blocus par les forces soviétiques.</li>
+                </ul>
+            </li>
+            <li><strong>Issue</strong> : Victoire soviétique, mais à un coût élevé avec environ un million de civils et un million de soldats soviétiques morts.</li>
+            <li><strong>Importance</strong> : La résistance héroïque de Léningrad a été cruciale pour la défaite finale de l'Allemagne nazie en Europe de l'Est.</li>
+        </ul>
+        <img src="leningradeim.PNG" alt="Bataille de Léningrad" class="large-image">
+    </section>
+    <footer>
+        <p>&copy; 2024 Brieuc Carbonnelle, Gabriel landuydt</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bataille de Stalingrad</title>
+    <link rel="icon" href="https://www.pngitem.com/pimgs/m/119-1197741_airplane-bomber-fighter-aircraft-clip-art-ww2-bomber.png" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        .back-button {
+            background-color: #6b8e23; /* Vert */
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            background-color: #5a771e; /* Vert plus foncé */
+            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .back-button:active {
+            background-color: #4c641a; /* Vert encore plus foncé */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+        .larger-text {
+            font-size: 1.2em; /* Taille de police plus grande */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bataille de Berlin</h1>
+    </header>
+    <section class="button-container">
+        <!-- Bouton de retour stylisé -->
+        <button class="back-button" onclick="history.back()">❮ Retour</button>
+    </section>
+    <section class="larger-text">
+        <h2>Résumé de la Bataille Berlin</h2>
+        <p>La Bataille de Berlin, le dernier grand affrontement de la Seconde Guerre mondiale en Europe, s'est déroulée du 16 avril au 2 mai 1945.</p>
+        <ul>
+            <li><strong>Contexte</strong> : Les forces soviétiques ont lancé une offensive massive pour capturer Berlin, la capitale du Troisième Reich, marquant la fin de la domination nazie en Europe.</li>
+            <li><strong>Déroulement</strong> :
+                <ul>
+                    <li>16 avril 1945 : Début de l'offensive soviétique avec une attaque sur les lignes de défense allemandes à l'est de Berlin.</li>
+                    <li>Avril 1945 : Avancée rapide des forces soviétiques, encerclant Berlin et affrontant des défenses acharnées dans la ville.</li>
+                    <li>30 avril 1945 : Adolf Hitler se suicide dans son bunker alors que les troupes soviétiques s'approchent.</li>
+                    <li>2 mai 1945 : Capitulation de Berlin aux forces soviétiques.</li>
+                </ul>
+            </li>
+            <li><strong>Issue</strong> : Victoire des Alliés, marquant la chute de Berlin et la fin du Troisième Reich.</li>
+            <li><strong>Importance</strong> : La Bataille de Berlin a été le point final de la Seconde Guerre mondiale en Europe, entraînant la capitulation inconditionnelle de l'Allemagne nazie le 8 mai 1945.</li>
+        </ul>
+        <img src="berlin.PNG" alt="Bataille de Berlin" class="large-image">
+    </section>
+    <footer>
+        <p>&copy; 2024 Brieuc Carbonnelle, Gabriel Landuydt</p>
+    </footer>
+</body>
+</html>
