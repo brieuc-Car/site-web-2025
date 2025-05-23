@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker Évolution</title>
+    <style>
+        :root {
+            --bg-color-light: #f3f4f6;
+            --text-color-light: #1e293b;
+            --bg-color-dark: #1e293b;
+            --text-color-dark: #f1f5f9;
+            --button-color: #4caf50;
+            --button-hover: #3e8e41;
+            --button-disabled: #6b7280;
+            --highlight-color: #ffd700;
+            --particle-color: gold;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.light {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        body.dark {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        #cookie {
+            width: 200px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        #cookie:active {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--highlight-color);
+        }
+
+        .score {
+            font-size: 2rem;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+
+        .score.gain {
+            color: var(--highlight-color);
+            transform: scale(1.2);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: var(--button-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: var(--button-hover);
+        }
+
+        button:disabled {
+            background-color: var(--button-disabled);
+            cursor: not-allowed;
+        }
+
+        .golden-cookie {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: gold;
+            border-radius: 50%;
+            cursor: pointer;
+            animation: floating 5s infinite alternate ease-in-out;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body class="light">
+    <button class="toggle-mode" id="toggle-dark-mode">Activer le mode sombre</button>
+    <h1>Cookie Clicker Évolution</h1>
+    <div class="score" id="score-container">Score : <span id="score">0</span></div>
+    <img src="https://purepng.com/public/uploads/large/purepng.com-cookiescookiessnacksbaked-snacksflour-cookieschocolate-cookies-1411527249039ulhcg.png"
+        alt="Cookie" id="cookie">
+    <div class="sidebar">
+        <button id="upgrade-click" disabled>+1 par clic (10 points)</button>
+        <button id="auto-clicker" disabled>Auto-clic (50 points)</button>
+        <button id="turbo-auto-clicker" disabled>Turbo Auto-Clic (200 points)</button>
+        <button id="boost-multiplier" disabled>Boost X2 (300 points)</button>
+        <button id="click-frenzy" disabled>Click Frenzy (500 points)</button>
+    </div>
+    <div id="golden-cookie" class="golden-cookie" style="display: none;"></div>
+    <script>
+        let score = 0;
+        let clickValue = 1;
+        let autoClickLevel = 0;
+        let multiplier = 1;
+        const body = document.body;
+        const scoreElement = document.getElementById("score");
+        const cookieElement = document.getElementById("cookie");
+        const upgradeClickButton = document.getElementById("upgrade-click");
+        const autoClickerButton = document.getElementById("auto-clicker");
+        const turboAutoClickerButton = document.getElementById("turbo-auto-clicker");
+        const boostMultiplierButton = document.getElementById("boost-multiplier");
+        const clickFrenzyButton = document.getElementById("click-frenzy");
+        const scoreContainer = document.getElementById("score-container");
+        const goldenCookieElement = document.getElementById("golden-cookie");
+        const toggleDarkModeButton = document.getElementById("toggle-dark-mode");
+
+        function updateScore() {
+            scoreElement.textContent = Math.floor(score);
+            upgradeClickButton.disabled = score < 10;
+            autoClickerButton.disabled = score < 50;
+            turboAutoClickerButton.disabled = score < 200;
+            boostMultiplierButton.disabled = score < 300;
+            clickFrenzyButton.disabled = score < 500;
+
+            scoreContainer.classList.add("gain");
+            setTimeout(() => scoreContainer.classList.remove("gain"), 200);
+        }
+
+        function activateGoldenCookie() {
+            goldenCookieElement.style.display = "block";
+            goldenCookieElement.style.top = `${Math.random() * 80}%`;
+            goldenCookieElement.style.left = `${Math.random() * 80}%`;
+
+            setTimeout(() => {
+                goldenCookieElement.style.display = "none";
+            }, 5000);
+        }
+
+        cookieElement.addEventListener("click", () => {
+            score += clickValue * multiplier;
+            updateScore();
+        });
+
+        goldenCookieElement.addEventListener("click", () => {
+            const bonus = Math.floor(Math.random() * 1000) + 500;
+            score += bonus;
+            alert(`Golden Cookie ! Vous avez gagné ${bonus} points !`);
+            goldenCookieElement.style.display = "none";
+            updateScore();
+        });
+
+        upgradeClickButton.addEventListener("click", () => {
+            if (score >= 10) {
+                score -= 10;
+                clickValue++;
+                updateScore();
+            }
+        });
+
+        autoClickerButton.addEventListener("click", () => {
+            if (score >= 50) {
+                score -= 50;
+                autoClickLevel++;
+                setInterval(() => {
+                    score += clickValue * multiplier;
+                    updateScore();
+                }, 1000 / autoClickLevel);
+            }
+        });
+
+        turboAutoClickerButton.addEventListener("click", () => {
+            if (score >= 200) {
+                score -= 200;
+                setInterval(() => {
+                    score += clickValue * 5;
+                    updateScore();
+                }, 500);
+            }
+        });
+
+        boostMultiplierButton.addEventListener("click", () => {
+            if (score >= 300) {
+                score -= 300;
+                multiplier *= 2;
+                setTimeout(() => {
+                    multiplier /= 2;
+                }, 15000);
+                updateScore();
+            }
+        });
+
+        clickFrenzyButton.addEventListener("click", () => {
+            if (score >= 500) {
+                score -= 500;
+                clickValue *= 5;
+                setTimeout(() => {
+                    clickValue /= 5;
+                }, 10000);
+                updateScore();
+            }
+        });
+
+        toggleDarkModeButton.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            body.classList.toggle("light");
+            toggleDarkModeButton.textContent = body.classList.contains("dark")
+                ? "Désactiver le mode sombre"
+                : "Activer le mode sombre";
+        });
+
+        // Basculer entre le mode clair et le mode sombre
+        toggleDarkModeButton.addEventListener("click", () => {
+            if (body.classList.contains("light")) {
+                body.classList.remove("light");
+                body.classList.add("dark");
+                toggleDarkModeButton.textContent = "Désactiver le mode sombre";
+            } else {
+                body.classList.remove("dark");
+                body.classList.add("light");
+                toggleDarkModeButton.textContent = "Activer le mode sombre";
+            }
+        });
+
+
+
+        // Apparition aléatoire des Golden Cookies
+        setInterval(() => {
+            if (Math.random() < 0.1) activateGoldenCookie();
+        }, 15000);
+
+        toggleDarkModeButton.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            body.classList.toggle("light");
+            toggleDarkModeButton.textContent = body.classList.contains("dark")
+                ? "Désactiver le mode sombre"
+                : "Activer le mode sombre";
+        });
+    </script>
+</body>
+</html>
